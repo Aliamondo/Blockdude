@@ -1,7 +1,5 @@
-package com.aliamondo.blockdude.screens;
+package src.com.aliamondo.blockdude.screens;
 
-import com.aliamondo.blockdude.objects.Achievement;
-import com.aliamondo.blockdude.objects.Data;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
@@ -13,6 +11,9 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector3;
+
+import src.com.aliamondo.blockdude.objects.Achievement;
+import src.com.aliamondo.blockdude.objects.Data;
 
 public class LevelCompleteScreen extends BlockdudeScreen {
 	TextureRegion title;

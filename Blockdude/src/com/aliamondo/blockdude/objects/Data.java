@@ -1,9 +1,9 @@
-package com.aliamondo.blockdude.objects;
-
-import java.util.ArrayList;
+package src.com.aliamondo.blockdude.objects;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+
+import java.util.ArrayList;
 
 public class Data {
 	private int totalStars;

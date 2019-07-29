@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="Blockdude-android/src"/>
+	<classpathentry kind="src" path="Blockdude-desktop/src"/>
+	<classpathentry kind="lib" path="Blockdude-android/bin/dexedLibs/gdx-5c3f937b5b9fff1d9d228d100487b83c.jar"/>
+	<classpathentry kind="lib" path="Blockdude-android/bin/dexedLibs/gdx-backend-android-cc68a324ad06ac5d07c00e9f0583a03c.jar"/>
+	<classpathentry kind="lib" path="Blockdude-android/bin/dexedLibs/gdx-backend-android-sources-72f82ebb29b669ac655718d9716c16d1.jar"/>
+	<classpathentry kind="lib" path="Blockdude-android/libs/gdx-backend-android-sources.jar"/>
+	<classpathentry kind="lib" path="Blockdude-android/libs/gdx-backend-android.jar"/>
+	<classpathentry kind="lib" path="Blockdude-desktop/Blockdude.jar" sourcepath="Blockdude/libs/gdx-sources.jar"/>
+	<classpathentry kind="lib" path="Blockdude-desktop/libs/gdx-backend-lwjgl-natives.jar"/>
+	<classpathentry kind="lib" path="Blockdude-desktop/libs/gdx-backend-lwjgl-sources.jar"/>
+	<classpathentry kind="lib" path="Blockdude-desktop/libs/gdx-backend-lwjgl.jar"/>
+	<classpathentry kind="lib" path="Blockdude-desktop/libs/gdx-natives.jar"/>
+	<classpathentry kind="lib" path="Blockdude/libs/gdx-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="Blockdude/libs/gdx.jar" sourcepath="Blockdude/libs/gdx-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry exported="true" kind="lib" path="Blockdude/libs/mockito-core-3.0.0.jar"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/classes" path="Blockdude">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

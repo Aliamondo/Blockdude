@@ -1,11 +1,12 @@
-package com.aliamondo.blockdude.screens;
+package src.com.aliamondo.blockdude.screens;
 
-import com.aliamondo.blockdude.objects.Data;
-import com.aliamondo.blockdude.objects.World;
-import com.aliamondo.blockdude.objects.WorldRenderer;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
+
+import src.com.aliamondo.blockdude.objects.Data;
+import src.com.aliamondo.blockdude.objects.World;
+import src.com.aliamondo.blockdude.objects.WorldRenderer;
 
 public class GameScreen extends BlockdudeScreen {
 

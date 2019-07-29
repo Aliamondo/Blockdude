@@ -1,4 +1,4 @@
-package com.aliamondo.blockdude.objects;
+package src.com.aliamondo.blockdude.objects;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -8,16 +8,17 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class Achievement {
+	public static final int ACHIEVEMENT_SHOW_TIME_LIMIT = 4;
 	String text = "";
 	Texture icon;
 	BitmapFont font;
-	TextureRegion bg = new TextureRegion(new Texture(Gdx.files.internal("achievement_frame.png")), 0, 0, 350, 70);
+	TextureRegion bg;
 	float t = 0;
 	boolean isDummyAchievement = false;
 
 	public Achievement() {
-		isDummyAchievement = true;
-		t = 4;
+		this.isDummyAchievement = true;
+		this.t = ACHIEVEMENT_SHOW_TIME_LIMIT;
 	}
 	
 	public Achievement(String text, String icon) {
@@ -29,10 +30,11 @@ public class Achievement {
 		this.font.setScale(1);
 		this.font.setColor(Color.WHITE);
 		this.t = 0;
+		this.bg = new TextureRegion(new Texture(Gdx.files.internal("achievement_frame.png")), 0, 0, 350, 70);
 	}
 
 	public void show() {
-		if (!isDummyAchievement && t < 4) {
+		if (!isDummyAchievement && t < ACHIEVEMENT_SHOW_TIME_LIMIT) {
 			SpriteBatch batch = new SpriteBatch();
 			batch.begin();
 			batch.draw(bg, convertScreenWidth(225), convertScreenHeight(100), convertScreenWidth(350), convertScreenHeight(70));
@@ -44,7 +46,7 @@ public class Achievement {
 		}
 	}
 	public boolean doneShowing() {
-		return (t >= 4);
+		return (t >= ACHIEVEMENT_SHOW_TIME_LIMIT);
 	}
 	public float convertScreenWidth(float x) {
 		return (x / 800) * Gdx.graphics.getWidth();
