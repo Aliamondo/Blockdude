@@ -1,8 +1,9 @@
-package com.aliamondo.blockdude.screens;
+package src.com.aliamondo.blockdude.screens;
 
-import com.aliamondo.blockdude.objects.Data;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
+
+import src.com.aliamondo.blockdude.objects.Data;
 
 public abstract class BlockdudeScreen implements Screen {
         Game game;

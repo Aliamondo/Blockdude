@@ -1,6 +1,5 @@
-package com.aliamondo.blockdude.screens;
+package src.com.aliamondo.blockdude.screens;
 
-import com.aliamondo.blockdude.objects.Data;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
@@ -8,6 +7,8 @@ import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+
+import src.com.aliamondo.blockdude.objects.Data;
 
 public class IntroScreen extends BlockdudeScreen {
 	TextureRegion intro;

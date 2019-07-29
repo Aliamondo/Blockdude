@@ -1,8 +1,9 @@
-package com.aliamondo.blockdude;
+package src.com.aliamondo.blockdude;
 
-import com.aliamondo.blockdude.objects.Data;
-import com.aliamondo.blockdude.screens.IntroScreen;
 import com.badlogic.gdx.Game;
+
+import src.com.aliamondo.blockdude.objects.Data;
+import src.com.aliamondo.blockdude.screens.IntroScreen;
 
 public class Blockdude extends Game {
 	// The original game by Brandon Sterner

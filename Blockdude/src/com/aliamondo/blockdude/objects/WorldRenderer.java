@@ -1,10 +1,5 @@
-package com.aliamondo.blockdude.objects;
+package src.com.aliamondo.blockdude.objects;
 
-import com.aliamondo.blockdude.objects.Block.Type;
-import com.aliamondo.blockdude.objects.Dude.State;
-import com.aliamondo.blockdude.screens.GameScreen;
-import com.aliamondo.blockdude.screens.LevelCompleteScreen;
-import com.aliamondo.blockdude.screens.LevelPickerScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.files.FileHandle;
@@ -14,6 +9,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Vector3;
+
+import src.com.aliamondo.blockdude.objects.Block.Type;
+import src.com.aliamondo.blockdude.objects.Dude.State;
+import src.com.aliamondo.blockdude.screens.GameScreen;
+import src.com.aliamondo.blockdude.screens.LevelCompleteScreen;
+import src.com.aliamondo.blockdude.screens.LevelPickerScreen;
 
 public class WorldRenderer {
 

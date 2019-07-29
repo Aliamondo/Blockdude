@@ -1,4 +1,4 @@
-package com.aliamondo.blockdude.objects;
+package src.com.aliamondo.blockdude.objects;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.input.GestureDetector.GestureListener;
