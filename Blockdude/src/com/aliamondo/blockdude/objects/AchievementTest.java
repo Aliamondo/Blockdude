@@ -17,7 +17,7 @@ public class AchievementTest {
 
         assertNotNull(testAchievement);
         assertEquals("", testAchievement.text);
-        assertEquals(Achievement.ACHIVEMENT_SHOW_TIME_LIMIT, testAchievement.t, 0);
+        assertEquals(Achievement.ACHIEVEMENT_SHOW_TIME_LIMIT, testAchievement.t, 0);
         assertTrue(testAchievement.isDummyAchievement);
     }
 
@@ -41,7 +41,7 @@ public class AchievementTest {
         testAchievement.show();
         assertFalse(testAchievement.doneShowing());
 
-        testAchievement.t += Achievement.ACHIVEMENT_SHOW_TIME_LIMIT; // manually add the time, because GDX is mocked
+        testAchievement.t += Achievement.ACHIEVEMENT_SHOW_TIME_LIMIT; // manually add the time, because GDX is mocked
         testAchievement.show();
         assertTrue(testAchievement.doneShowing());
     }

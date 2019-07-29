@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All tests" type="CompoundRunConfigurationType">
+    <toRun name="AchievementTest" type="JUnit" />
+    <toRun name="BlockTest" type="JUnit" />
+    <method v="2" />
+  </configuration>
+</component>

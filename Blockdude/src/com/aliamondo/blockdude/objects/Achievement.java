@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class Achievement {
-	public static final int ACHIVEMENT_SHOW_TIME_LIMIT = 4;
+	public static final int ACHIEVEMENT_SHOW_TIME_LIMIT = 4;
 	String text = "";
 	Texture icon;
 	BitmapFont font;
@@ -18,7 +18,7 @@ public class Achievement {
 
 	public Achievement() {
 		this.isDummyAchievement = true;
-		this.t = ACHIVEMENT_SHOW_TIME_LIMIT;
+		this.t = ACHIEVEMENT_SHOW_TIME_LIMIT;
 	}
 	
 	public Achievement(String text, String icon) {
@@ -34,7 +34,7 @@ public class Achievement {
 	}
 
 	public void show() {
-		if (!isDummyAchievement && t < ACHIVEMENT_SHOW_TIME_LIMIT) {
+		if (!isDummyAchievement && t < ACHIEVEMENT_SHOW_TIME_LIMIT) {
 			SpriteBatch batch = new SpriteBatch();
 			batch.begin();
 			batch.draw(bg, convertScreenWidth(225), convertScreenHeight(100), convertScreenWidth(350), convertScreenHeight(70));
@@ -46,7 +46,7 @@ public class Achievement {
 		}
 	}
 	public boolean doneShowing() {
-		return (t >= ACHIVEMENT_SHOW_TIME_LIMIT);
+		return (t >= ACHIEVEMENT_SHOW_TIME_LIMIT);
 	}
 	public float convertScreenWidth(float x) {
 		return (x / 800) * Gdx.graphics.getWidth();
