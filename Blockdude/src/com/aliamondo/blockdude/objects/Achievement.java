@@ -25,7 +25,7 @@ public class Achievement {
 	public Achievement(String text, String icon) {
 		this.isDummyAchievement = false;
 		this.text = text;
-		this.icon = new Texture(Gdx.files.internal("ach_icons\\" + icon + ".png"));
+		this.icon = new Texture(Gdx.files.internal("ach_icons/" + icon + ".png"));
 		this.font = new BitmapFont(Gdx.files.internal("default.fnt"), Gdx.files.internal("default.png"), false);
 		this.font.setColor(1.0f, 1.0f, 1.0f, 1.0f);
 		this.font.setScale(1);
