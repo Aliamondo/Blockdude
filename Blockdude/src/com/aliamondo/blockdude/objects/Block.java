@@ -8,6 +8,8 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 public abstract class Block {
+    private static final int WIDTH = 96;
+    private static final int HEIGHT = 96;
     TextureRegion blockTexture;
     Rectangle rect;
     String textureName;
@@ -23,7 +25,7 @@ public abstract class Block {
         else if (type == Type.FINISH_BLOCK) this.textureName = "door.png";
         else this.textureName = "block.png";
 
-        blockTexture = new TextureRegion(new Texture(Gdx.files.internal(textureName)), 0, 0, 96, 96);
+        blockTexture = new TextureRegion(new Texture(Gdx.files.internal(textureName)), 0, 0, WIDTH, HEIGHT);
         this.position = pos;
         this.type = type;
         this.rect = new Rectangle(position.x, position.y, 1f, 1f);
@@ -34,7 +36,7 @@ public abstract class Block {
     }
 
     public void render(SpriteBatch batch) {
-        batch.draw(blockTexture, (getPosition().x) * 96, getPosition().y * 96);
+        batch.draw(blockTexture, (getPosition().x) * WIDTH, getPosition().y * HEIGHT);
     }
 
     public void setPosition(Vector2 newPos) {
@@ -45,8 +47,7 @@ public abstract class Block {
 
     void setPosition(float x, float y) {
         this.position = new Vector2(x, y);
-        this.rect.setX(x);
-        this.rect.setY(y);
+        this.rect.set(x, y, WIDTH, HEIGHT);
     }
 
     public void dispose() {

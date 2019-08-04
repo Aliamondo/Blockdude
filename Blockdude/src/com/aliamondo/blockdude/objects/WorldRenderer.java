@@ -98,7 +98,7 @@ public class WorldRenderer {
 		gameScreen.getData().showNextAchievement();
 
 		for (Star star : world.getStars()) {
-			if (Intersector.overlapRectangles(dude.rect, star.rect)) {
+			if (Intersector.overlaps(dude.rect, star.rect)) {
 				if (star.isVisible()) {
 					starsCollected++;
 					gameScreen.getData().setStarsCollected(starsCollected);
@@ -116,7 +116,7 @@ public class WorldRenderer {
 		}
 
 		for (Block block : world.getBlocks()) {
-			if (Intersector.overlapRectangles(dude.rect, block.rect)) {
+			if (Intersector.overlaps(dude.rect, block.rect)) {
 				if (block.type == Type.FINISH_BLOCK && !finished) {
 					//					System.out.println("Level won!");
 					//					System.out.println("Stars collected: " + starsCollected);
@@ -160,7 +160,7 @@ public class WorldRenderer {
 				}
 			}
 			if (movableBlock != null) {
-				if (Intersector.overlapRectangles(movableBlock.rect, block.rect)) {
+				if (Intersector.overlaps(movableBlock.rect, block.rect)) {
 					if (block.type == Type.FINISH_BLOCK) {
 						//System.out.println("This is SO stupid, but whatever...");
 						return false;

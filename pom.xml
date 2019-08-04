@@ -41,8 +41,7 @@
 		<dependency>
 			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-backend-lwjgl</artifactId>
-			<version>1.0.0</version>
-			<scope>test</scope>
+			<version>0.9.9</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.badlogicgames.gdx/gdx -->
 		<dependency>
@@ -53,6 +52,12 @@
 		<dependency>
 			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-platform</artifactId>
+			<version>0.9.9</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.badlogicgames.gdx/gdx-freetype -->
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-freetype</artifactId>
 			<version>0.9.9</version>
 		</dependency>
 	</dependencies>

@@ -26,7 +26,7 @@ public class ScreenGestureListener implements GestureListener {
 
 		if (cam.zoom < 0.5f) cam.zoom = 0.5f;
 		else if (cam.zoom > 2.5f) cam.zoom = 2.5f;
-		
+
 //		if (cam.zoom < 1) {
 //			Vector3 pos0 = new Vector3(Gdx.input.getX(0), Gdx.input.getY(0), 0);
 //			Vector3 pos1 = new Vector3(Gdx.input.getX(1), Gdx.input.getY(1), 0);
@@ -73,6 +73,12 @@ public class ScreenGestureListener implements GestureListener {
 
 	@Override
 	public boolean pan(float x, float y, float deltaX, float deltaY) {
+		zooming = false;
+		return false;
+	}
+
+	@Override
+	public boolean panStop(float x, float y, int pointer, int button) {
 		zooming = false;
 		return false;
 	}
