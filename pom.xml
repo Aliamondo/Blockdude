@@ -50,5 +50,10 @@
 			<artifactId>gdx</artifactId>
 			<version>0.9.9</version>
 		</dependency>
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-platform</artifactId>
+			<version>0.9.9</version>
+		</dependency>
 	</dependencies>
 </project>
