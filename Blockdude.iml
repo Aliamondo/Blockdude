@@ -28,7 +28,6 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Blockdude-android/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Blockdude-desktop/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Blockdude" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />

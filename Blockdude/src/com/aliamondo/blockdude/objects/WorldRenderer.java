@@ -40,15 +40,15 @@ public class WorldRenderer {
 
 	private Texture restartTexture;
 	private Texture rightTexture;
-	ScreenGestureListener screenGestureListener = new ScreenGestureListener();
+	private ScreenGestureListener screenGestureListener = new ScreenGestureListener();
 
 	private int starsCollected = 0;
 	private int maximumXForLeft = -1;
 
 	private Achievement achievement = new Achievement();
 
-	SpriteBatch batch;
-	SpriteBatch buttonsBatch;
+	private SpriteBatch batch;
+	private SpriteBatch buttonsBatch;
 
 	public WorldRenderer(World world, GameScreen gameScreen) {
 		this.world = world;
