@@ -14,6 +14,7 @@ import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +41,7 @@ public class GdxTestRunner extends BlockJUnit4ClassRunner implements Application
 
             @Override
             public FileHandle internal(String path) {
+                System.out.println(new File(".").getAbsolutePath());
                 return new FileHandle("Blockdude-android\\assets\\" + path);
             }
 
