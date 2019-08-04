@@ -1,30 +1,34 @@
 package src.com.aliamondo.blockdude.objects;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import src.com.aliamondo.blockdude.GdxTestRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-@RunWith(GdxTestRunner.class)
 public class BlockTest {
-    public class BlockTestType extends Block {
+    public static class BlockTestType extends Block {
         private String expectedTextureName;
 
-        public BlockTestType(Block.Type type, String expectedTextureName) {
+        BlockTestType(Block.Type type, String expectedTextureName) {
             super(new Vector2(), type);
 
             this.expectedTextureName = expectedTextureName + ".png";
         }
 
-        public String getExpectedTextureName() {
+        String getExpectedTextureName() {
             return expectedTextureName;
         }
+    }
+
+    @BeforeClass
+    public static void setup() {
+        GdxTestRunner.setupTests();
     }
 
     @Test
@@ -49,26 +53,12 @@ public class BlockTest {
 
     @Test
     public void testRender() {
-        Gdx.app.postRunnable(new Runnable() {
-            public void run() {
-
-            }
-        });
-
         BlockTestType testBlock = new BlockTestType(Block.Type.STATIC_BLOCK, "");
         testBlock.setPosition(1, 1);
 
-        SpriteBatch batch = new SpriteBatch();
-        batch.setProjectionMatrix(new OrthographicCamera().combined);
-        batch.begin();
-
-        testBlock.render(batch, 0, 0);
-
-        batch.end();
-
-        assertEquals(1, batch.totalRenderCalls);
-        assertEquals(1, batch.maxSpritesInBatch);
-        batch.dispose();
+        SpriteBatch batch = Mockito.mock(SpriteBatch.class);
+        testBlock.render(batch);
+        Mockito.verify(batch, Mockito.times(1)).draw(Mockito.any(TextureRegion.class), Mockito.anyFloat(), Mockito.anyFloat());
     }
 
     @Test

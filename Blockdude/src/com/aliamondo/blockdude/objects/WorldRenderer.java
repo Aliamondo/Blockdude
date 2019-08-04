@@ -40,15 +40,15 @@ public class WorldRenderer {
 
 	private Texture restartTexture;
 	private Texture rightTexture;
-	ScreenGestureListener screenGestureListener = new ScreenGestureListener();
+	private ScreenGestureListener screenGestureListener = new ScreenGestureListener();
 
 	private int starsCollected = 0;
 	private int maximumXForLeft = -1;
 
 	private Achievement achievement = new Achievement();
 
-	SpriteBatch batch;
-	SpriteBatch buttonsBatch;
+	private SpriteBatch batch;
+	private SpriteBatch buttonsBatch;
 
 	public WorldRenderer(World world, GameScreen gameScreen) {
 		this.world = world;
@@ -98,7 +98,7 @@ public class WorldRenderer {
 		gameScreen.getData().showNextAchievement();
 
 		for (Star star : world.getStars()) {
-			if (Intersector.overlapRectangles(dude.rect, star.rect)) {
+			if (Intersector.overlaps(dude.rect, star.rect)) {
 				if (star.isVisible()) {
 					starsCollected++;
 					gameScreen.getData().setStarsCollected(starsCollected);
@@ -116,7 +116,7 @@ public class WorldRenderer {
 		}
 
 		for (Block block : world.getBlocks()) {
-			if (Intersector.overlapRectangles(dude.rect, block.rect)) {
+			if (Intersector.overlaps(dude.rect, block.rect)) {
 				if (block.type == Type.FINISH_BLOCK && !finished) {
 					//					System.out.println("Level won!");
 					//					System.out.println("Stars collected: " + starsCollected);
@@ -160,7 +160,7 @@ public class WorldRenderer {
 				}
 			}
 			if (movableBlock != null) {
-				if (Intersector.overlapRectangles(movableBlock.rect, block.rect)) {
+				if (Intersector.overlaps(movableBlock.rect, block.rect)) {
 					if (block.type == Type.FINISH_BLOCK) {
 						//System.out.println("This is SO stupid, but whatever...");
 						return false;
@@ -275,7 +275,7 @@ public class WorldRenderer {
 
 		for (Block block : world.getBlocks()) {
 			//block.render(batch, world.HORIZONTAL_TILES, world.VERTICAL_TILES);
-			block.render(batch, world.HORIZONTAL_TILES, world.VERTICAL_TILES);
+			block.render(batch);
 		}
 
 		for (Star star : world.getStars()) {
@@ -284,7 +284,7 @@ public class WorldRenderer {
 			}
 		}
 
-		dude.render(batch, world.HORIZONTAL_TILES, world.VERTICAL_TILES);
+		dude.render(batch);
 		
 		//		batch.draw(restartTexture, cam.position.x + 325*cam.zoom, cam.position.y + 150*cam.zoom, 96*cam.zoom,96*cam.zoom);
 		//		batch.draw(rightTexture, cam.position.x - 325*cam.zoom, cam.position.y + 150*cam.zoom, -96*cam.zoom,96*cam.zoom);

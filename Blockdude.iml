@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
     <libelement value="jar://$MODULE_DIR$/Blockdude-android/bin/dexedLibs/gdx-5c3f937b5b9fff1d9d228d100487b83c.jar!/" />
     <libelement value="jar://$MODULE_DIR$/Blockdude-android/bin/dexedLibs/gdx-backend-android-cc68a324ad06ac5d07c00e9f0583a03c.jar!/" />
@@ -22,14 +22,14 @@
       <src_folder value="file://$MODULE_DIR$/Blockdude" expected_position="19" />
     </src_description>
   </component>
-  <component name="NewModuleRootManager">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
-    <exclude-output />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Blockdude-android/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Blockdude-desktop/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Blockdude" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="module-library">
@@ -78,17 +78,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="Blockdude.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/Blockdude-desktop/Blockdude.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/Blockdude/libs/gdx-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="gdx-backend-lwjgl-natives.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/Blockdude-desktop/libs/gdx-backend-lwjgl-natives.jar!/" />
@@ -125,26 +114,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="gdx-sources.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/Blockdude/libs/gdx-sources.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="gdx.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/Blockdude/libs/gdx.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/Blockdude/libs/gdx-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="junit5">
         <CLASSES>
           <root url="jar://$APPLICATION_HOME_DIR$/lib/junit.jar!/" />
@@ -153,17 +122,8 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="mockito-core-3.0.0.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/Blockdude/libs/mockito-core-3.0.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library name="JUnit4">
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/" />
@@ -173,7 +133,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="file://$MAVEN_REPOSITORY$/net/bytebuddy" />
@@ -183,7 +143,7 @@
         <jarDirectory url="file://$MAVEN_REPOSITORY$/net/bytebuddy" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar!/" />
@@ -192,7 +152,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.9.10/byte-buddy-agent-1.9.10.jar!/" />
@@ -201,10 +161,44 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/org/objenesis/objenesis/2.6/objenesis-2.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Maven: org.mockito:mockito-core:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.9.10" level="project" />
+    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy-agent:1.9.10" level="project" />
+    <orderEntry type="library" name="Maven: org.objenesis:objenesis:2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.binarytweed:quarantining-test-runner:0.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.10" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-backend-lwjgl:0.9.9" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-openal:0.9.9" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.jlayer:jlayer:1.0.1-gdx" level="project" />
+    <orderEntry type="library" name="Maven: org.jcraft:jorbis:0.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.lwjgl.lwjgl:lwjgl:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: org.lwjgl.lwjgl:lwjgl-platform:natives-windows:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: org.lwjgl.lwjgl:lwjgl-platform:natives-linux:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: org.lwjgl.lwjgl:lwjgl-platform:natives-osx:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: net.java.jinput:jinput:2.0.5" level="project" />
+    <orderEntry type="library" name="Maven: net.java.jutils:jutils:1.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: net.java.jinput:jinput-platform:natives-linux:2.0.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: net.java.jinput:jinput-platform:natives-windows:2.0.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: net.java.jinput:jinput-platform:natives-osx:2.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.lwjgl.lwjgl:lwjgl_util:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx:0.9.9" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-platform:0.9.9" level="project" />
+    <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-freetype:0.9.9" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.badlogicgames.gdx:gdx-natives:0.9.9">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/Blockdude-desktop/libs/gdx-natives.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
