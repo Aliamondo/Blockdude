@@ -1,6 +1,5 @@
-dist: xenial
 language: java
-addons:
-  apt:
-    packages:
-      - ant
+jdk:
+  - oraclejdk8
+
+script: ant build
