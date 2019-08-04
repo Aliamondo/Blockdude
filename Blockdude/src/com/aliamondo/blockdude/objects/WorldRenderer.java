@@ -275,7 +275,7 @@ public class WorldRenderer {
 
 		for (Block block : world.getBlocks()) {
 			//block.render(batch, world.HORIZONTAL_TILES, world.VERTICAL_TILES);
-			block.render(batch, world.HORIZONTAL_TILES, world.VERTICAL_TILES);
+			block.render(batch);
 		}
 
 		for (Star star : world.getStars()) {
@@ -284,7 +284,7 @@ public class WorldRenderer {
 			}
 		}
 
-		dude.render(batch, world.HORIZONTAL_TILES, world.VERTICAL_TILES);
+		dude.render(batch);
 		
 		//		batch.draw(restartTexture, cam.position.x + 325*cam.zoom, cam.position.y + 150*cam.zoom, 96*cam.zoom,96*cam.zoom);
 		//		batch.draw(rightTexture, cam.position.x - 325*cam.zoom, cam.position.y + 150*cam.zoom, -96*cam.zoom,96*cam.zoom);

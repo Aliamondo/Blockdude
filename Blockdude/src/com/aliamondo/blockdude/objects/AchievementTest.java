@@ -8,8 +8,8 @@ import static org.junit.Assert.*;
 
 @RunWith(GdxTestRunner.class)
 public class AchievementTest {
-    static final String achievementText = "test";
-    static final String testIcon = "star_first";
+    private static final String achievementText = "test";
+    private static final String testIcon = "star_first";
 
     @Test
     public void testDummyAchievement() {

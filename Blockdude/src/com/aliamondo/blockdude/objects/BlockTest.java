@@ -1,6 +1,5 @@
 package src.com.aliamondo.blockdude.objects;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
@@ -13,16 +12,16 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(GdxTestRunner.class)
 public class BlockTest {
-    public class BlockTestType extends Block {
+    public static class BlockTestType extends Block {
         private String expectedTextureName;
 
-        public BlockTestType(Block.Type type, String expectedTextureName) {
+        BlockTestType(Block.Type type, String expectedTextureName) {
             super(new Vector2(), type);
 
             this.expectedTextureName = expectedTextureName + ".png";
         }
 
-        public String getExpectedTextureName() {
+        String getExpectedTextureName() {
             return expectedTextureName;
         }
     }
@@ -49,12 +48,6 @@ public class BlockTest {
 
     @Test
     public void testRender() {
-        Gdx.app.postRunnable(new Runnable() {
-            public void run() {
-
-            }
-        });
-
         BlockTestType testBlock = new BlockTestType(Block.Type.STATIC_BLOCK, "");
         testBlock.setPosition(1, 1);
 
@@ -62,7 +55,7 @@ public class BlockTest {
         batch.setProjectionMatrix(new OrthographicCamera().combined);
         batch.begin();
 
-        testBlock.render(batch, 0, 0);
+        testBlock.render(batch);
 
         batch.end();
 

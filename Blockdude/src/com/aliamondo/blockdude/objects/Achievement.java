@@ -8,13 +8,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class Achievement {
-	public static final int ACHIEVEMENT_SHOW_TIME_LIMIT = 4;
+	static final int ACHIEVEMENT_SHOW_TIME_LIMIT = 4;
 	String text = "";
 	Texture icon;
 	BitmapFont font;
 	TextureRegion bg;
-	float t = 0;
-	boolean isDummyAchievement = false;
+	float t;
+	boolean isDummyAchievement;
 
 	public Achievement() {
 		this.isDummyAchievement = true;
@@ -45,13 +45,13 @@ public class Achievement {
 			batch.dispose();
 		}
 	}
-	public boolean doneShowing() {
+	boolean doneShowing() {
 		return (t >= ACHIEVEMENT_SHOW_TIME_LIMIT);
 	}
-	public float convertScreenWidth(float x) {
+	private float convertScreenWidth(float x) {
 		return (x / 800) * Gdx.graphics.getWidth();
 	}
-	public float convertScreenHeight(float y) {
+	private float convertScreenHeight(float y) {
 		return (y / 480) * Gdx.graphics.getHeight();
 	}
 }

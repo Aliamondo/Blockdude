@@ -7,20 +7,21 @@ import java.util.ArrayList;
 
 public class Data {
     static final String DATA_FILE = "data.txt";
+    static final int WIDTH = 800, HEIGHT = 480;
     private int totalStars;
     private int level;
     private int maxLevel;
     private int starsCollected = 0;
     private boolean firstRunEver = false;
     private boolean cheater = false;
-    private boolean gameComplete = false;
+    private boolean gameComplete;
     private Achievement a = new Achievement();
 
     private ArrayList<Achievement> achievementQueue = new ArrayList<>();
 
     public Data() {
         try {
-            FileHandle file = Gdx.files.local("data.txt");
+            FileHandle file = Gdx.files.local(DATA_FILE);
             String[] contents = file.readString().split("\\r?\\n");
             this.level = Integer.parseInt(contents[0]);
             this.totalStars = Integer.parseInt(contents[1]);
@@ -63,9 +64,6 @@ public class Data {
         }
     }
 
-    //	public void finishShowingAchievement() {
-//		a.t = 4;
-//	}
     public int getLevel() {
         return level;
     }
@@ -120,10 +118,10 @@ public class Data {
     }
 
     public float convertScreenWidth(float x) {
-        return (x / 800) * Gdx.graphics.getWidth();
+        return (x / WIDTH) * Gdx.graphics.getWidth();
     }
 
     public float convertScreenHeight(float y) {
-        return (y / 480) * Gdx.graphics.getHeight();
+        return (y / HEIGHT) * Gdx.graphics.getHeight();
     }
 }
