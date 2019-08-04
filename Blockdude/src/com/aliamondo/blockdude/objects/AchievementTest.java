@@ -45,6 +45,7 @@ public class AchievementTest {
     public void testShowAchievement() {
         Achievement testAchievement = new Achievement(achievementText, testIcon);
         testAchievement.batch = Mockito.mock(SpriteBatch.class);
+        testAchievement.setTesting();
 
         testAchievement.show();
         assertFalse(testAchievement.doneShowing());
