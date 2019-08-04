@@ -41,8 +41,7 @@ public class GdxTestRunner extends BlockJUnit4ClassRunner implements Application
 
             @Override
             public FileHandle internal(String path) {
-                System.out.println(new File(".").getAbsolutePath());
-                return new FileHandle("Blockdude-android\\assets\\" + path);
+                return new FileHandle(new File(".").getAbsolutePath() + "\\Blockdude-android\\assets\\" + path);
             }
 
             @Override
