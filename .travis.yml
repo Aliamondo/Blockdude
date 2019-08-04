@@ -2,3 +2,5 @@ language: java
 dist: trusty
 jdk:
   - oraclejdk8
+
+before_install: cd $TRAVIS_BUILD_DIR
