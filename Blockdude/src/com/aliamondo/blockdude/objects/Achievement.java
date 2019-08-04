@@ -16,6 +16,7 @@ public class Achievement {
 	float t;
 	boolean isDummyAchievement;
 	SpriteBatch batch;
+	private boolean isTesting = false;
 
 	public Achievement() {
 		this.isDummyAchievement = true;
@@ -36,7 +37,7 @@ public class Achievement {
 
 	public void show() {
 		if (!isDummyAchievement && t < ACHIEVEMENT_SHOW_TIME_LIMIT) {
-			if (batch == null) batch = new SpriteBatch();
+			if (!isTesting) batch = new SpriteBatch();
 			batch.begin();
 			batch.draw(bg, convertScreenWidth(225), convertScreenHeight(100), convertScreenWidth(350), convertScreenHeight(70));
 			batch.draw(icon, convertScreenWidth(225 + 5), convertScreenHeight(100 + 3), convertScreenWidth(64), convertScreenHeight(64));
@@ -55,4 +56,5 @@ public class Achievement {
 	private float convertScreenHeight(float y) {
 		return (y / 480) * Gdx.graphics.getHeight();
 	}
+	void setTesting() {isTesting = true;}
 }

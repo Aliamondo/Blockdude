@@ -184,9 +184,9 @@ public class WorldRenderer {
 		return false;
 	}
 
-	public float specialRound(float x, float min) {
-		if (x%1 < min) return (float)Math.round(x);
-		else return (float)Math.ceil(x);
+	public float specialRound(float n, float min) {
+		if (n%1 < min) return (float)Math.round(n);
+		else return (float)Math.ceil(n);
 	}
 
 	public Block checkIfMovableBlockIsAvailable() {
