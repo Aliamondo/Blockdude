@@ -1,15 +1,22 @@
 package src.com.aliamondo.blockdude.objects;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import src.com.aliamondo.blockdude.GdxTestRunner;
 
 import static org.junit.Assert.*;
 
-@RunWith(GdxTestRunner.class)
 public class AchievementTest {
     private static final String achievementText = "test";
     private static final String testIcon = "star_first";
+
+    @BeforeClass
+    public static void setup() {
+        GdxTestRunner.setupTests();
+    }
 
     @Test
     public void testDummyAchievement() {
@@ -37,6 +44,7 @@ public class AchievementTest {
     @Test
     public void testShowAchievement() {
         Achievement testAchievement = new Achievement(achievementText, testIcon);
+        testAchievement.batch = Mockito.mock(SpriteBatch.class);
 
         testAchievement.show();
         assertFalse(testAchievement.doneShowing());
@@ -44,6 +52,13 @@ public class AchievementTest {
         testAchievement.t += Achievement.ACHIEVEMENT_SHOW_TIME_LIMIT; // manually add the time, because GDX is mocked
         testAchievement.show();
         assertTrue(testAchievement.doneShowing());
+        // achievement should be shown only once => batch.draw() should be called only once
+        Mockito.verify(testAchievement.batch, Mockito.times(1)).draw(
+                Mockito.any(TextureRegion.class),
+                Mockito.anyFloat(),
+                Mockito.anyFloat(),
+                Mockito.anyFloat(),
+                Mockito.anyFloat());
     }
 
     @Test

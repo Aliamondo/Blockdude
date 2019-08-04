@@ -1,16 +1,16 @@
 package src.com.aliamondo.blockdude.objects;
 
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import src.com.aliamondo.blockdude.GdxTestRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-@RunWith(GdxTestRunner.class)
 public class BlockTest {
     public static class BlockTestType extends Block {
         private String expectedTextureName;
@@ -24,6 +24,11 @@ public class BlockTest {
         String getExpectedTextureName() {
             return expectedTextureName;
         }
+    }
+
+    @BeforeClass
+    public static void setup() {
+        GdxTestRunner.setupTests();
     }
 
     @Test
@@ -51,17 +56,9 @@ public class BlockTest {
         BlockTestType testBlock = new BlockTestType(Block.Type.STATIC_BLOCK, "");
         testBlock.setPosition(1, 1);
 
-        SpriteBatch batch = new SpriteBatch();
-        batch.setProjectionMatrix(new OrthographicCamera().combined);
-        batch.begin();
-
+        SpriteBatch batch = Mockito.mock(SpriteBatch.class);
         testBlock.render(batch);
-
-        batch.end();
-
-        assertEquals(1, batch.totalRenderCalls);
-        assertEquals(1, batch.maxSpritesInBatch);
-        batch.dispose();
+        Mockito.verify(batch, Mockito.times(1)).draw(Mockito.any(TextureRegion.class), Mockito.anyFloat(), Mockito.anyFloat());
     }
 
     @Test

@@ -1,14 +1,18 @@
 package src.com.aliamondo.blockdude.objects;
 
 import com.badlogic.gdx.math.Vector2;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import src.com.aliamondo.blockdude.GdxTestRunner;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(GdxTestRunner.class)
 public class StaticBlockTest {
+    @BeforeClass
+    public static void setup() {
+        GdxTestRunner.setupTests();
+    }
+
     @Test
     public void testConstructor() {
         final int testValue = 50;

@@ -15,6 +15,7 @@ public class Achievement {
 	TextureRegion bg;
 	float t;
 	boolean isDummyAchievement;
+	SpriteBatch batch;
 
 	public Achievement() {
 		this.isDummyAchievement = true;
@@ -35,7 +36,7 @@ public class Achievement {
 
 	public void show() {
 		if (!isDummyAchievement && t < ACHIEVEMENT_SHOW_TIME_LIMIT) {
-			SpriteBatch batch = new SpriteBatch();
+			if (batch == null) batch = new SpriteBatch();
 			batch.begin();
 			batch.draw(bg, convertScreenWidth(225), convertScreenHeight(100), convertScreenWidth(350), convertScreenHeight(70));
 			batch.draw(icon, convertScreenWidth(225 + 5), convertScreenHeight(100 + 3), convertScreenWidth(64), convertScreenHeight(64));
